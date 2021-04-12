@@ -16,13 +16,13 @@ class Form extends Component {
           <Input
             faIcon="fas fa-user-friends"
             type="text"
-            placeholder="First Name"
+            placeholder="First name"
             required
           />
           <Input
             faIcon="fas fa-user-friends"
             type="text"
-            placeholder="Last Name"
+            placeholder="Last name"
             required
           />
           <Input
@@ -33,9 +33,9 @@ class Form extends Component {
           />
 
           <Input
-            faIcon="fas fa-envelope"
+            faIcon="fas fa-mobile"
             type="tel"
-            placeholder="Phone Number"
+            placeholder="Phone number"
             required
           />
         </div>

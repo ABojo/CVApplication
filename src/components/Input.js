@@ -19,31 +19,24 @@ class Input extends Component {
     }
   }
 
-  buildInput() {
-    return (
-      <input
-        type={this.props.type}
-        placeholder={this.props.placeholder}
-        className={`input-field ${this.props.faIcon ? 'has-icon' : ''}`}
-        required={this.props.required ? true : ''}
-        onBlur={this.showValidity}
-      ></input>
-    );
-  }
+  render() {
+    const { faIcon, type, placeholder, required } = this.props;
 
-  buildWithIcon() {
     return (
       <div className="input-container">
-        <i class={`${this.props.faIcon} input-icon`}></i>
-        {this.buildInput()}
+        {faIcon ? <i class={`${faIcon} input-icon`}></i> : ''}
+
+        <input
+          type={type}
+          placeholder={placeholder}
+          className={`input-field ${faIcon ? 'has-icon' : ''}`}
+          required={required ? true : ''}
+          onBlur={this.showValidity}
+        ></input>
+
+        <h1 class="field-label">{placeholder}</h1>
       </div>
     );
-  }
-
-  render() {
-    if (this.props.faIcon) return this.buildWithIcon();
-
-    return this.buildInput();
   }
 }
 
