@@ -7,12 +7,18 @@ class Navbar extends Component {
     this.props = props;
   }
 
+  addIcon() {
+    return <i className={`${this.props.faIcon} navbar-title-icon`}></i>;
+  }
+
   render() {
+    const { title } = this.props;
+
     return (
       <div className="navbar">
-        <h1 class="navbar-title">
-          <i className="fas fa-scroll navbar-title-icon"></i>
-          {this.props.title}
+        <h1 className="navbar-title">
+          {this.props.faIcon ? this.addIcon() : ''}
+          {title || 'Default Title'}
         </h1>
       </div>
     );

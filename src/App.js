@@ -4,7 +4,7 @@ import styles from './styles/baseStyles.css';
 
 class App extends Component {
   render() {
-    return <Navbar title="CV Crafter" />;
+    return <Navbar faIcon="fas fa-scroll" title="CV Crafter" />;
   }
 }
 
