@@ -24,7 +24,7 @@ class Input extends Component {
 
     return (
       <div className="input-container">
-        {faIcon ? <i class={`${faIcon} input-icon`}></i> : ''}
+        {faIcon ? <i className={`${faIcon} input-icon`}></i> : ''}
 
         <input
           type={type}
@@ -34,7 +34,7 @@ class Input extends Component {
           onBlur={this.showValidity}
         ></input>
 
-        <h1 class="field-label">{placeholder}</h1>
+        <h1 className="field-label">{placeholder}</h1>
       </div>
     );
   }
