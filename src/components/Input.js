@@ -7,13 +7,26 @@ class Input extends Component {
     this.props = props;
   }
 
+  showValidity(event) {
+    const input = event.target;
+
+    if (input.checkValidity()) {
+      input.classList.add('valid');
+      input.classList.remove('invalid');
+    } else {
+      input.classList.add('invalid');
+      input.classList.remove('valid');
+    }
+  }
+
   buildInput() {
     return (
       <input
         type={this.props.type}
         placeholder={this.props.placeholder}
-        className={`input-field ${this.props.faIcon ? 'icon' : ''}`}
+        className={`input-field ${this.props.faIcon ? 'has-icon' : ''}`}
         required={this.props.required ? true : ''}
+        onBlur={this.showValidity}
       ></input>
     );
   }

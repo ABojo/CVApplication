@@ -11,4 +11,11 @@
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
+  color: rgb(50, 50, 50);
+}
+
+.general-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
 }

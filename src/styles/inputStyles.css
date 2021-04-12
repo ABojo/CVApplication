@@ -1,6 +1,7 @@
 .input-container {
   display: inline-block;
   position: relative;
+  width: 100%;
 }
 
 .input-icon {
@@ -8,7 +9,8 @@
   top: 50%;
   left: 1rem;
   transform: translateY(-50%);
-  color: #55efc4;
+  color: rgb(50, 50, 50);
+  font-size: 1.5rem;
 }
 
 .input-field {
@@ -17,16 +19,31 @@
   font-size: 1.5rem;
   font-family: inherit;
   margin-right: 1rem;
-  transition: all 0.2s;
-  background-color: rgba(245, 245, 245, 0.4);
-  border-radius: 1rem;
+  transition: all 0.2s, border 0.4s;
+  background-color: rgba(235, 235, 235, 0.4);
+  width: 100%;
+
+  color: rgb(50, 50, 50);
+  border-bottom: 3px solid transparent;
 }
 
-.input-field.icon {
-  padding-left: 3rem;
+.input-field::placeholder {
+  color: rgb(50, 50, 50);
+}
+
+.input-field.has-icon {
+  padding-left: 4rem;
 }
 
 .input-field:active,
 .input-field:focus {
-  background-color: rgba(245, 245, 245, 1);
+  background-color: rgba(235, 235, 235, 1);
+}
+
+.valid {
+  border-bottom: 3px solid #55efc4;
+}
+
+.invalid {
+  border-bottom: 3px solid #d63031;
 }
