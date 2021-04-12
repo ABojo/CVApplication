@@ -1,4 +1,6 @@
 import { Component } from 'react';
+import Input from './Input';
+import styles from '../styles/formStyles.css';
 
 class Form extends Component {
   constructor(props) {
@@ -7,7 +9,29 @@ class Form extends Component {
   }
 
   render() {
-    return <div>Section</div>;
+    return (
+      <div className="form">
+        <h1 className="section-title">General Information</h1>
+        <Input
+          faIcon="fas fa-user-friends"
+          type="text"
+          placeholder="First Name"
+          required
+        />
+        <Input
+          faIcon="fas fa-user-friends"
+          type="text"
+          placeholder="Last Name"
+          required
+        />
+        <Input
+          faIcon="fas fa-envelope"
+          type="email"
+          placeholder="Email"
+          required
+        />
+      </div>
+    );
   }
 }
 
