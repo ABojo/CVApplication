@@ -12,12 +12,12 @@ class Navbar extends Component {
   }
 
   render() {
-    const { title } = this.props;
+    const { title, faIcon } = this.props;
 
     return (
       <div className="navbar">
         <h1 className="navbar-title">
-          {this.props.faIcon ? this.addIcon() : ''}
+          {faIcon ? this.addIcon() : ''}
           {title || 'Default Title'}
         </h1>
       </div>
