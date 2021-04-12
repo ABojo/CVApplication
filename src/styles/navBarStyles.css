@@ -1,0 +1,15 @@
+.navbar {
+  background-color: rgb(50, 50, 50);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+.navbar-title {
+  font-size: 3rem;
+  font-weight: 300;
+}
+
+.navbar-title-icon {
+  margin-right: 1rem;
+}
