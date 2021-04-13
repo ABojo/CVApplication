@@ -1,7 +1,8 @@
 import { Component } from 'react';
 import Input from './Input';
+import TextArea from './TextArea';
 
-class EducationSection extends Component {
+class JobSection extends Component {
   constructor(props) {
     super(props);
     this.props = props;
@@ -10,36 +11,37 @@ class EducationSection extends Component {
   render() {
     return (
       <div className="form-section">
-        <h1 className="section-title">Education</h1>
+        <h1 className="section-title">Job Experience</h1>
         <div className="general-grid">
           <Input
-            faIcon="fas fa-school"
+            faIcon="fas fa-building"
             type="text"
-            placeholder="School Name"
+            placeholder="Company Name"
             required
           />
           <Input
-            faIcon="fas fa-certificate"
+            faIcon="fas fa-briefcase"
             type="text"
-            placeholder="Degree Awarded"
+            placeholder="Your position"
             required
           />
           <Input
             faIcon="fas fa-calendar-week"
             type="date"
-            placeholder="Start of study"
+            placeholder="Start date"
             required
           />
           <Input
             faIcon="fas fa-calendar-week"
             type="date"
-            placeholder="End of study"
+            placeholder="End date"
             required
           />
+          <TextArea placeholder="What did you do on the job?" required />
         </div>
       </div>
     );
   }
 }
 
-export default EducationSection;
+export default JobSection;
