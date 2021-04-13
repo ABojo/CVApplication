@@ -1,7 +1,7 @@
 .form-section {
   display: block;
   margin: 0 auto;
-  width: 100%;
+  width: 90%;
   max-width: 80rem;
   padding: 2rem;
   border-radius: 1rem;
@@ -11,12 +11,13 @@
 .section-title {
   font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   color: rgb(50, 50, 50);
 }
 
 .general-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(47%, 1fr));
   grid-gap: 2rem;
+  width: 100%;
 }
