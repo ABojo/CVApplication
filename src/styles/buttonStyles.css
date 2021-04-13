@@ -1,0 +1,18 @@
+.add-button {
+  border: none;
+  background-color: #30336b;
+  color: white;
+  padding: 1rem;
+  font-weight: 800;
+  margin-bottom: 3rem;
+  transition: all 0.2s;
+}
+
+.button-icon {
+  margin-right: 1rem;
+}
+
+.add-button:hover {
+  background-color: #5055ac;
+  cursor: pointer;
+}
