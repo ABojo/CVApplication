@@ -13,7 +13,7 @@ class TextArea extends Input {
       <div className="input-container big">
         <textarea
           placeholder={placeholder}
-          className="input-field big"
+          className="input-field"
           required={required ? true : ''}
           onBlur={this.showValidity}
         ></textarea>

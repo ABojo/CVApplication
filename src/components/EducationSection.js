@@ -10,6 +10,9 @@ class EducationSection extends Component {
   render() {
     return (
       <div className="form-section">
+        <h1 className="section-delete">
+          <i className="fas fa-times-circle"></i>
+        </h1>
         <h1 className="section-title">Education</h1>
         <div className="general-grid">
           <Input
