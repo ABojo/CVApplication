@@ -2,6 +2,7 @@ import { Component } from 'react';
 import Input from './Input';
 import styles from '../styles/formStyles.css';
 import GeneralSection from './GeneralSection';
+import EducationSection from './EducationSection';
 
 class Form extends Component {
   constructor(props) {
@@ -13,6 +14,7 @@ class Form extends Component {
     return (
       <form className="form">
         <GeneralSection />
+        <EducationSection />
       </form>
     );
   }

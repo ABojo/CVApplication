@@ -1,9 +1,8 @@
 import { Component } from 'react';
 import Input from './Input';
-import TextArea from './TextArea';
 import styles from '../styles/formStyles.css';
 
-class GeneralSection extends Component {
+class EducationSection extends Component {
   constructor(props) {
     super(props);
     this.props = props;
@@ -12,37 +11,36 @@ class GeneralSection extends Component {
   render() {
     return (
       <div className="form-section">
-        <h1 className="section-title">General Information</h1>
+        <h1 className="section-title">Education</h1>
         <div className="general-grid">
           <Input
-            faIcon="fas fa-user-friends"
+            faIcon="fas fa-school"
             type="text"
-            placeholder="First name"
+            placeholder="School Name"
             required
           />
           <Input
-            faIcon="fas fa-user-friends"
+            faIcon="fas fa-certificate"
             type="text"
-            placeholder="Last name"
+            placeholder="Degree Awarded"
             required
           />
           <Input
-            faIcon="fas fa-envelope"
-            type="email"
-            placeholder="Email"
+            faIcon="fas fa-calendar-week"
+            type="date"
+            placeholder="Start of study"
             required
           />
           <Input
-            faIcon="fas fa-mobile"
-            type="tel"
-            placeholder="Phone number"
+            faIcon="fas fa-calendar-week"
+            type="date"
+            placeholder="End of study"
             required
           />
-          <TextArea placeholder="About me" required />
         </div>
       </div>
     );
   }
 }
 
-export default GeneralSection;
+export default EducationSection;

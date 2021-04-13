@@ -56,3 +56,15 @@
 .invalid {
   border-bottom: 3px solid #d63031;
 }
+
+.span-full {
+  grid-column: auto / -1;
+}
+
+.input-container.big {
+  grid-column: span 2;
+}
+
+.input-container.big > textarea {
+  resize: none;
+}
