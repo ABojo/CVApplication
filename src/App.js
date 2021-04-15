@@ -51,7 +51,7 @@ class App extends Component {
       ],
     };
 
-    const educationSection = {
+    const eduSection = {
       title: 'Education',
       optional: true,
       fields: [
@@ -136,7 +136,7 @@ class App extends Component {
 
     this.state = {
       generalSection: generalSection,
-      educationSections: [educationSection],
+      eduSections: [eduSection],
       jobSections: [jobSection],
     };
   }
