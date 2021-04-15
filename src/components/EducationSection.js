@@ -3,8 +3,7 @@ import Input from './Input';
 
 class EducationSection extends Component {
   constructor(props) {
-    super(props);
-    this.props = props;
+    super();
   }
 
   render() {
@@ -24,7 +23,7 @@ class EducationSection extends Component {
           <Input
             faIcon="fas fa-certificate"
             type="text"
-            placeholder="Degree Awarded"
+            placeholder="Title of study"
             required
           />
           <Input

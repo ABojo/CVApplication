@@ -5,8 +5,7 @@ import styles from '../styles/formStyles.css';
 
 class GeneralSection extends Component {
   constructor(props) {
-    super(props);
-    this.props = props;
+    super();
   }
 
   render() {

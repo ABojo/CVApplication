@@ -9,12 +9,13 @@ class Form extends Component {
   constructor(props) {
     super(props);
     this.props = props;
+    this.state = {};
   }
 
   render() {
     return (
       <form className="form">
-        <GeneralSection />
+        <GeneralSection name="generalSection" />
         <EducationSection />
         <Button type="Education" />
         <JobSection />
