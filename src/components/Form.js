@@ -1,24 +1,31 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import styles from '../styles/formStyles.css';
-import GeneralSection from './GeneralSection';
-import EducationSection from './EducationSection';
-import JobSection from './JobSection';
 import Button from './Button';
+import Section from './Section';
 
 class Form extends Component {
   constructor(props) {
     super(props);
     this.props = props;
-    this.state = {};
   }
 
   render() {
+    const {
+      generalSection,
+      educationSections,
+      jobSections,
+    } = this.props.sections;
+
     return (
       <form className="form">
-        <GeneralSection name="generalSection" />
-        <EducationSection />
+        <Section section={generalSection} />
+        {educationSections.map((section) => (
+          <Section section={section} />
+        ))}
         <Button type="Education" />
-        <JobSection />
+        {jobSections.map((section) => (
+          <Section section={section} />
+        ))}
         <Button type="Job" />
       </form>
     );

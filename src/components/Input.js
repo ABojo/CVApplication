@@ -20,7 +20,7 @@ class Input extends Component {
   }
 
   render() {
-    const { faIcon, type, placeholder, required } = this.props;
+    const { faIcon, type, placeholder, required, value } = this.props;
 
     return (
       <div className="input-container">
@@ -32,6 +32,7 @@ class Input extends Component {
           className={`input-field ${faIcon ? 'has-icon' : ''}`}
           required={required ? true : ''}
           onBlur={this.showValidity}
+          value={value}
         ></input>
 
         <h1 className="field-label">{placeholder}</h1>

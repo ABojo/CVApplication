@@ -8,6 +8,7 @@ class App extends Component {
     super(props);
     const generalSection = {
       title: 'General Information',
+      optional: false,
       fields: [
         {
           size: 'small',
@@ -52,6 +53,7 @@ class App extends Component {
 
     const educationSection = {
       title: 'Education',
+      optional: true,
       fields: [
         {
           faIcon: 'fas fa-school',
@@ -90,6 +92,7 @@ class App extends Component {
 
     const jobSection = {
       title: 'Job Experience',
+      optional: true,
       fields: [
         {
           faIcon: 'fas fa-building',
@@ -126,7 +129,7 @@ class App extends Component {
         {
           size: 'big',
           placeholder: 'What did you do on the job?',
-          requried: true,
+          required: true,
         },
       ],
     };
