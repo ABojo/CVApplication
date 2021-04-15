@@ -9,19 +9,19 @@ class Form extends Component {
     this.props = props;
   }
 
+  createSections(section) {
+    return <Section section={section} />;
+  }
+
   render() {
     const { generalSection, eduSections, jobSections } = this.props.sections;
 
     return (
       <form className="form">
         <Section section={generalSection} />
-        {eduSections.map((section) => (
-          <Section section={section} />
-        ))}
+        {eduSections.map(this.createSections)}
         <Button type="Education" />
-        {jobSections.map((section) => (
-          <Section section={section} />
-        ))}
+        {jobSections.map(this.createSections)}
         <Button type="Job" />
       </form>
     );
