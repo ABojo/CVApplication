@@ -9,11 +9,11 @@ class Form extends Component {
     this.props = props;
   }
 
-  createSections = (section, i) => {
+  createSections = (section) => {
     const { onDelete, onChange } = this.props;
     return (
       <Section
-        key={i}
+        key={section.id}
         section={section}
         onDelete={() => onDelete(section)}
         onChange={onChange}
