@@ -7,7 +7,7 @@ class TextArea extends Input {
   }
 
   render() {
-    const { placeholder, required } = this.props;
+    const { placeholder, required, value } = this.props;
 
     return (
       <div className="input-container big">
@@ -16,6 +16,7 @@ class TextArea extends Input {
           className="input-field"
           required={required ? true : ''}
           onBlur={this.showValidity}
+          value={value}
           onChange={this.handleChange}
         ></textarea>
         <h1 className="field-label">{placeholder}</h1>
