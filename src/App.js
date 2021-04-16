@@ -40,14 +40,23 @@ class App extends Component {
   };
 
   handleChange = (newValue, section, fieldObj) => {
-    const name = section.title === 'Education' ? 'eduSections' : 'jobSections';
-    const sectionIndex = this.state[name].indexOf(section);
-    const fieldIndex = this.state[name][sectionIndex].fields.indexOf(fieldObj);
     const newState = { ...this.state };
-    newState[name][sectionIndex].fields[fieldIndex].value = newValue;
+    const { title } = section;
+
+    if (title === 'General Information') {
+      const name = 'generalSection';
+      const fieldIndex = this.state[name].fields.indexOf(fieldObj);
+      newState[name].fields[fieldIndex].value = newValue;
+    } else if (title === 'Education' || title === 'Job Experience') {
+      const name = title === 'Education' ? 'eduSections' : 'jobSections';
+      const sectionIndex = this.state[name].indexOf(section);
+      const fieldIndex = this.state[name][sectionIndex].fields.indexOf(
+        fieldObj
+      );
+      newState[name][sectionIndex].fields[fieldIndex].value = newValue;
+    }
 
     this.setState(newState);
-    console.log(this.state);
   };
 
   handleModeChange = () => {
