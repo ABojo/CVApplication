@@ -2,6 +2,7 @@ import { Component } from 'react';
 import Navbar from './components/Navbar';
 import styles from './styles/baseStyles.css';
 import Form from './components/Form';
+import Switch from './components/Switch';
 import createNewSection from './createNewSection';
 
 class App extends Component {
@@ -11,8 +12,8 @@ class App extends Component {
     this.state = {
       inEditMode: true,
       generalSection: createNewSection('general'),
-      eduSections: [createNewSection('edu')],
-      jobSections: [createNewSection('job')],
+      eduSections: [],
+      jobSections: [],
     };
   }
 
@@ -77,6 +78,10 @@ class App extends Component {
     return (
       <div className="app">
         <Navbar faIcon="fas fa-scroll" title="CV Crafter" />
+        <Switch
+          onModeChange={this.handleModeChange}
+          checked={this.state.inEditMode}
+        />
         {this.state.inEditMode ? form : ''}
       </div>
     );
