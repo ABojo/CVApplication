@@ -9,6 +9,7 @@ class App extends Component {
     super(props);
 
     this.state = {
+      inEditMode: true,
       generalSection: createNewSection('general'),
       eduSections: [createNewSection('edu')],
       jobSections: [createNewSection('job')],
@@ -49,16 +50,25 @@ class App extends Component {
     console.log(this.state);
   };
 
+  handleModeChange = () => {
+    const bool = this.state.inEditMode ? false : true;
+    this.setState({ inEditMode: bool });
+  };
+
   render() {
+    const form = (
+      <Form
+        sections={this.state}
+        onDelete={this.handleDelete}
+        onAdd={this.handleAdd}
+        onChange={this.handleChange}
+      />
+    );
+
     return (
       <div className="app">
         <Navbar faIcon="fas fa-scroll" title="CV Crafter" />
-        <Form
-          sections={this.state}
-          onDelete={this.handleDelete}
-          onAdd={this.handleAdd}
-          onChange={this.handleChange}
-        />
+        {this.state.inEditMode ? form : ''}
       </div>
     );
   }
