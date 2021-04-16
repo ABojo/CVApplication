@@ -19,9 +19,13 @@ class Input extends Component {
     }
   }
 
+  handleChange = (e) => {
+    const { section, fieldObject, onChange } = this.props;
+    onChange(e.target.value, section, fieldObject);
+  };
+
   render() {
     const { faIcon, type, placeholder, required, value } = this.props;
-
     return (
       <div className="input-container">
         {faIcon ? <i className={`${faIcon} input-icon`}></i> : ''}
@@ -33,6 +37,7 @@ class Input extends Component {
           required={required ? true : ''}
           onBlur={this.showValidity}
           value={value}
+          onChange={this.handleChange}
         ></input>
 
         <h1 className="field-label">{placeholder}</h1>

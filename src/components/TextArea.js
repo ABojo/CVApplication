@@ -16,6 +16,7 @@ class TextArea extends Input {
           className="input-field"
           required={required ? true : ''}
           onBlur={this.showValidity}
+          onChange={this.handleChange}
         ></textarea>
         <h1 className="field-label">{placeholder}</h1>
       </div>

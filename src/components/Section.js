@@ -1,7 +1,6 @@
 import { Component } from 'react';
 import Input from './Input';
 import TextArea from './TextArea';
-import uniqid from 'uniqid';
 
 class Section extends Component {
   constructor(props) {
@@ -9,28 +8,37 @@ class Section extends Component {
     this.props = props;
   }
 
-  buildInput(f) {
+  buildInput = (f, i) => {
+    const { section, onChange } = this.props;
     const { size, faIcon, placeholder, type, required, value } = f;
     if (size === 'small') {
       return (
         <Input
-          key={uniqid()}
+          key={i}
           faIcon={faIcon}
           placeholder={placeholder}
           type={type}
           required={required}
+          value={value}
+          onChange={onChange}
+          section={section}
+          fieldObject={f}
         />
       );
     } else {
       return (
         <TextArea
-          key={uniqid()}
+          key={i}
           placeholder={placeholder}
           required={required}
+          value={value}
+          onChange={onChange}
+          section={section}
+          fieldObject={f}
         />
       );
     }
-  }
+  };
 
   render() {
     const { section } = this.props;

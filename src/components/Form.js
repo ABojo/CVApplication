@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import styles from '../styles/formStyles.css';
 import Button from './Button';
 import Section from './Section';
-import uniqid from 'uniqid';
 
 class Form extends Component {
   constructor(props) {
@@ -10,23 +9,24 @@ class Form extends Component {
     this.props = props;
   }
 
-  createSections = (section) => {
-    const { onDelete } = this.props;
+  createSections = (section, i) => {
+    const { onDelete, onChange } = this.props;
     return (
       <Section
-        key={uniqid()}
+        key={i}
         section={section}
         onDelete={() => onDelete(section)}
+        onChange={onChange}
       />
     );
   };
 
   render() {
     const { generalSection, eduSections, jobSections } = this.props.sections;
-    const { onAdd } = this.props;
+    const { onAdd, onChange } = this.props;
     return (
       <form className="form">
-        <Section section={generalSection} />
+        <Section section={generalSection} onChange={onChange} />
         {eduSections.map(this.createSections)}
         <Button type="Education" onAdd={onAdd} />
         {jobSections.map(this.createSections)}
