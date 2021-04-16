@@ -1,14 +1,21 @@
 /* The switch - the box around the slider */
 .switch-box {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  margin-bottom: 3rem;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 1rem;
+  border-radius: 1rem;
+  z-index: 1;
+  top: 1rem;
+  right: 1rem;
+  transform: scale(0.7);
 }
 
 .switch-heading {
-  margin-right: 1rem;
+  margin-bottom: 1rem;
   font-weight: 600;
 }
 

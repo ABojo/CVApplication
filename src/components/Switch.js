@@ -10,10 +10,10 @@ class Switch extends Component {
   render() {
     const { checked, onModeChange } = this.props;
     return (
-      <div class="switch-box">
+      <div className="switch-box">
         <h1 className="switch-heading">Edit Mode</h1>
         <label className="switch">
-          <input type="checkbox" checked={checked} onClick={onModeChange} />
+          <input type="checkbox" checked={checked} onChange={onModeChange} />
           <span className="slider round"></span>
         </label>
       </div>
