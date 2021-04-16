@@ -9,9 +9,10 @@ class Button extends Component {
   }
 
   render() {
+    const { onAdd, type } = this.props;
     return (
-      <button className="add-button">
-        <i className="fas fa-plus button-icon"></i>Add {this.props.type}
+      <button className="add-button" onClick={() => onAdd(type)}>
+        <i className="fas fa-plus button-icon"></i>Add {type}
       </button>
     );
   }

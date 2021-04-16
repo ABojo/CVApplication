@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import Input from './Input';
 import TextArea from './TextArea';
+import uniqid from 'uniqid';
 
 class Section extends Component {
   constructor(props) {
@@ -13,16 +14,20 @@ class Section extends Component {
     if (size === 'small') {
       return (
         <Input
+          key={uniqid()}
           faIcon={faIcon}
           placeholder={placeholder}
           type={type}
           required={required}
-          value={value}
         />
       );
     } else {
       return (
-        <TextArea placeholder={placeholder} required={required} value={value} />
+        <TextArea
+          key={uniqid()}
+          placeholder={placeholder}
+          required={required}
+        />
       );
     }
   }
@@ -30,7 +35,7 @@ class Section extends Component {
   render() {
     const { section } = this.props;
     const deleteButton = (
-      <h1 className="section-delete">
+      <h1 className="section-delete" onClick={this.props.onDelete}>
         <i className="fas fa-times-circle"></i>
       </h1>
     );

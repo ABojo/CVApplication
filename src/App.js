@@ -6,7 +6,8 @@ import Form from './components/Form';
 class App extends Component {
   constructor(props) {
     super(props);
-    const generalSection = {
+
+    this.generalSection = {
       title: 'General Information',
       optional: false,
       fields: [
@@ -51,7 +52,7 @@ class App extends Component {
       ],
     };
 
-    const eduSection = {
+    this.eduSection = {
       title: 'Education',
       optional: true,
       fields: [
@@ -90,7 +91,7 @@ class App extends Component {
       ],
     };
 
-    const jobSection = {
+    this.jobSection = {
       title: 'Job Experience',
       optional: true,
       fields: [
@@ -135,17 +136,41 @@ class App extends Component {
     };
 
     this.state = {
-      generalSection: generalSection,
-      eduSections: [eduSection],
-      jobSections: [jobSection],
+      generalSection: { ...this.generalSection },
+      eduSections: [{ ...this.eduSection }],
+      jobSections: [{ ...this.jobSection }],
     };
   }
+
+  handleDelete = (section) => {
+    const name = section.title === 'Education' ? 'eduSections' : 'jobSections';
+    const index = this.state[name].indexOf(section);
+    const newArray = this.state[name].splice(index, 1);
+
+    this.setState({ name: newArray });
+  };
+
+  handleAdd = (type) => {
+    if (type === 'Education') {
+      this.setState({
+        eduSections: [...this.state.eduSections, { ...this.eduSection }],
+      });
+    } else {
+      this.setState({
+        jobSections: [...this.state.jobSections, { ...this.jobSection }],
+      });
+    }
+  };
 
   render() {
     return (
       <div className="app">
         <Navbar faIcon="fas fa-scroll" title="CV Crafter" />
-        <Form sections={this.state} />
+        <Form
+          sections={this.state}
+          onDelete={this.handleDelete}
+          onAdd={this.handleAdd}
+        />
       </div>
     );
   }
