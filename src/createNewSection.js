@@ -37,7 +37,7 @@ const general = {
     },
     {
       size: 'big',
-      placeholder: 'About me',
+      placeholder: 'Briefly describe yourself',
       required: true,
       value: '',
     },
