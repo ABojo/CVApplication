@@ -2,6 +2,7 @@ import { Component } from 'react';
 import Navbar from './components/Navbar';
 import styles from './styles/baseStyles.css';
 import Form from './components/Form';
+import CV from './components/CV';
 import Switch from './components/Switch';
 import createNewSection from './createNewSection';
 
@@ -75,6 +76,8 @@ class App extends Component {
       />
     );
 
+    const cvPreview = <CV state={this.state} />;
+
     return (
       <div className="app">
         <Navbar faIcon="fas fa-scroll" title="CV Crafter" />
@@ -82,7 +85,7 @@ class App extends Component {
           onModeChange={this.handleModeChange}
           checked={this.state.inEditMode}
         />
-        {this.state.inEditMode ? form : ''}
+        {this.state.inEditMode ? form : cvPreview}
       </div>
     );
   }
