@@ -93,3 +93,25 @@
   font-size: 1.3rem;
   line-height: 2rem;
 }
+
+@media (max-width: 500px) {
+  .cv-header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .cv-name {
+    font-size: 1.5rem;
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+
+  .cv-image {
+    margin-bottom: 2rem;
+  }
+  .cv-list-item {
+    align-items: flex-start;
+  }
+}
