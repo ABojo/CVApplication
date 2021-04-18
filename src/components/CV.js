@@ -30,7 +30,7 @@ class CV extends Component {
     }
 
     return (
-      <div className="cv-list-item">
+      <div className="cv-list-item" key={section.id}>
         <i className="far fa-circle cv-list-item__dot"></i>
         <p className="cv-list-item__text">{text}</p>
       </div>

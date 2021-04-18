@@ -37,8 +37,6 @@ class App extends Component {
         jobSections: [...this.state.jobSections, createNewSection('job')],
       });
     }
-
-    console.log(this.state);
   };
 
   handleChange = (newValue, section, fieldObj) => {
