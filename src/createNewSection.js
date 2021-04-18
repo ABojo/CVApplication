@@ -6,7 +6,7 @@ const general = {
     {
       size: 'small',
       faIcon: 'fas fa-user-friends',
-      placeholder: 'First name',
+      placeholder: 'Name',
       type: 'text',
       required: true,
       value: '',
@@ -14,7 +14,7 @@ const general = {
     {
       size: 'small',
       faIcon: 'fas fa-user-friends',
-      placeholder: 'Last name',
+      placeholder: 'Profession',
       type: 'text',
       required: true,
       value: '',
@@ -37,7 +37,7 @@ const general = {
     },
     {
       size: 'big',
-      placeholder: 'Briefly describe yourself',
+      placeholder: 'Who are you?',
       required: true,
       value: '',
     },
@@ -118,11 +118,6 @@ const job = {
       placeholder: 'End date',
       required: true,
       value: '',
-    },
-    {
-      size: 'big',
-      placeholder: 'What did you do on the job?',
-      required: true,
     },
   ],
 };
